@@ -35,5 +35,5 @@ GSI1
 / Get Version history of tag
 {
     "PK":"COAF#SOURCE#1234",
-    "SK":"#TARGET#1234_enriched#REF#2345#RETURN#BU#v1"
+    "tagName": "1234_BU_Enrichment"
 }

@@ -48,7 +48,7 @@ class GetActiveTag(Resource):
         
         return value
 
-# 0.0.0.0:5000/getTagVersionHistory - with json data ({"PK":"COAF#SOURCE#1234","SK":"#TARGET#1234_enriched#REF#2345#RETURN#BU#v1"})
+# 0.0.0.0:5000/getTagVersionHistory - with json data ({"PK":"COAF#SOURCE#1234","tagName": "1234_BU_Enrichment"})
 
 class GetTagVersionHistory(Resource):
     def __init__(self):
@@ -62,7 +62,7 @@ class GetTagVersionHistory(Resource):
         content = request.get_json()
         pk = content['PK']
         tagName = content['tagName']
-        value = {}
+        value = {"versionHistory":[]}
 
         resp = table.query(
             KeyConditionExpression=Key('PK').eq(pk)
@@ -70,8 +70,9 @@ class GetTagVersionHistory(Resource):
 
         for i in range(len(resp['Items'])):
             if resp['Items'][i]['tagName'] == tagName:
-                getVersion = {"getVersion":resp['Items'][i]['SK']}
-                value.update(getVersion)
+                # getVersion = {"sk":resp['Items'][i]['SK'], "version":resp['Items'][i]['version']}
+                getVersion = {"version":resp['Items'][i]['version']}
+                value['versionHistory'].append(getVersion)
             else:
                 print("data not exist")
 
