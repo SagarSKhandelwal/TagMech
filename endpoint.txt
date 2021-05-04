@@ -1,0 +1,39 @@
+
+/get tags by incoming datasetID
+
+
+Primary Table
+/get active tags
+
+Primary Table
+/get version history of a tag
+
+Primary Table
+/put - update a tag
+
+Primary Table
+/post - add a tag
+
+Primary Table
+/get all tags owned by a specific user
+GSI1
+
+/get a user’s tags by approvalStatus
+GSI1
+
+/ For specifc user - another is - TFE111
+{
+    "PK":"COAF#SOURCE#1234",
+    "createdBy": "TFE641" 
+}
+
+/ Get active tags
+{
+    "PK":"COAF#SOURCE#1234" 
+}
+
+/ Get Version history of tag
+{
+    "PK":"COAF#SOURCE#1234",
+    "SK":"#TARGET#1234_enriched#REF#2345#RETURN#BU#v1"
+}
