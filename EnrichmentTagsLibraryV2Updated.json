@@ -201,63 +201,6 @@
           "SK": {
             "S": "#TARGET#1234_enriched"
           },
-          "type": {
-            "S": "NA"
-          },
-          "owner": {
-            "S": "NA"
-          },
-          "ownerContact": {
-            "S": "NA"
-          },
-          "createDate": {
-            "S": "NA"
-          },
-          "createdBy": {
-            "S": "NA"
-          },
-          "tagName": {
-            "S": "NA"
-          },
-          "tagDescription": {
-            "S": "NA"
-          },
-          "approveDate": {
-            "S": "NA"
-          },
-          "approvedBy": {
-            "S": "NA"
-          },
-          "state": {
-            "S": "NA"
-          },
-          "version": {
-            "S": "NA"
-          },
-          "currVersion": {
-            "S": "NA"
-          },
-          "deleteDate": {
-            "S": "NA"
-          },
-          "deletedBy": {
-            "S": "NA"
-          },
-          "effectiveDate": {
-            "S": "NA"
-          },
-          "depenencies": {
-            "L": []
-          },
-          "sourceDatasetMetadata": {
-            "L": []
-          },
-          "referenceDatasetMetadata": {
-            "L": []
-          },
-          "joinCriteria": {
-            "L": []
-          },
           "datasetName": {
             "S": "1234_enriched"
           },
@@ -311,12 +254,6 @@
           "currVersion": {
             "S": "v2"
           },
-          "deleteDate": {
-            "S": "NA"
-          },
-          "deletedBy": {
-            "S": "NA"
-          },
           "effectiveDate": {
             "S": "04/21/2021 00:00:00"
           },
@@ -324,22 +261,61 @@
             "L": []
           },
           "sourceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "1234"
+                  },
+                  "address": {
+                    "S": "s3://..."
+                  }
+                }
+              }
+            ]
           },
           "referenceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "2345"
+                  },
+                  "address": {
+                    "S": "postgres://..."
+                  }
+                }
+              }
+            ]
           },
           "joinCriteria": {
-            "L": []
-          },
-          "datasetName": {
-            "S": "NA"
-          },
-          "datasetID": {
-            "S": "NA"
-          },
-          "destination": {
-            "S": "NA"
+            "L": [
+              {
+                "M": {
+                  "dataset1": {
+                    "S": "source1"
+                  },
+                  "dataset1Type": {
+                    "S": "source"
+                  },
+                  "dataset1EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "dataset2": {
+                    "S": "ref1"
+                  },
+                  "dataset2Type": {
+                    "S": "ref"
+                  },
+                  "dataset2EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "returnField": {
+                    "S": "GL Account"
+                  }
+                }
+              }
+            ]
           }
         },
         {
@@ -382,9 +358,6 @@
           "version": {
             "S": "v1"
           },
-          "currVersion": {
-            "S": "NA"
-          },
           "deleteDate": {
             "S": "04/23/2021 00:00:00"
           },
@@ -398,22 +371,59 @@
             "L": []
           },
           "sourceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "1234"
+                  },
+                  "address": {
+                    "S": "s3://..."
+                  }
+                }
+              }
+            ]
           },
           "referenceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "2345"
+                  },
+                  "address": {
+                    "S": "postgres://..."
+                  }
+                }
+              }
+            ]
           },
           "joinCriteria": {
-            "L": []
-          },
-          "datasetName": {
-            "S": "NA"
-          },
-          "datasetID": {
-            "S": "NA"
-          },
-          "destination": {
-            "S": "NA"
+            "L": [{
+                "M": {
+                  "dataset1": {
+                    "S": "source1"
+                  },
+                  "dataset1Type": {
+                    "S": "source"
+                  },
+                  "dataset1EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "dataset2": {
+                    "S": "ref1"
+                  },
+                  "dataset2Type": {
+                    "S": "ref"
+                  },
+                  "dataset2EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "returnField": {
+                    "S": "GL Account"
+                  }
+                }
+              }]
           }
         },
         {
@@ -456,15 +466,6 @@
           "version": {
             "S": "v2"
           },
-          "currVersion": {
-            "S": "NA"
-          },
-          "deleteDate": {
-            "S": "NA"
-          },
-          "deletedBy": {
-            "S": "NA"
-          },
           "effectiveDate": {
             "S": "04/23/2021 00:00:00"
           },
@@ -472,22 +473,59 @@
             "L": []
           },
           "sourceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "1234"
+                  },
+                  "address": {
+                    "S": "s3://..."
+                  }
+                }
+              }
+            ]
           },
           "referenceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "2345"
+                  },
+                  "address": {
+                    "S": "postgres://..."
+                  }
+                }
+              }
+            ]
           },
           "joinCriteria": {
-            "L": []
-          },
-          "datasetName": {
-            "S": "NA"
-          },
-          "datasetID": {
-            "S": "NA"
-          },
-          "destination": {
-            "S": "NA"
+            "L": [{
+                "M": {
+                  "dataset1": {
+                    "S": "source1"
+                  },
+                  "dataset1Type": {
+                    "S": "source"
+                  },
+                  "dataset1EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "dataset2": {
+                    "S": "ref1"
+                  },
+                  "dataset2Type": {
+                    "S": "ref"
+                  },
+                  "dataset2EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "returnField": {
+                    "S": "GL Account"
+                  }
+                }
+              }]
           }
         },
         {
@@ -496,63 +534,6 @@
           },
           "SK": {
             "S": "#TARGET#1345_enriched"
-          },
-          "type": {
-            "S": "NA"
-          },
-          "owner": {
-            "S": "NA"
-          },
-          "ownerContact": {
-            "S": "NA"
-          },
-          "createDate": {
-            "S": "NA"
-          },
-          "createdBy": {
-            "S": "NA"
-          },
-          "tagName": {
-            "S": "NA"
-          },
-          "tagDescription": {
-            "S": "NA"
-          },
-          "approveDate": {
-            "S": "NA"
-          },
-          "approvedBy": {
-            "S": "NA"
-          },
-          "state": {
-            "S": "NA"
-          },
-          "version": {
-            "S": "NA"
-          },
-          "currVersion": {
-            "S": "NA"
-          },
-          "deleteDate": {
-            "S": "NA"
-          },
-          "deletedBy": {
-            "S": "NA"
-          },
-          "effectiveDate": {
-            "S": "NA"
-          },
-          "depenencies": {
-            "L": []
-          },
-          "sourceDatasetMetadata": {
-            "L": []
-          },
-          "referenceDatasetMetadata": {
-            "L": []
-          },
-          "joinCriteria": {
-            "L": []
           },
           "datasetName": {
             "S": "1345_enriched"
@@ -584,7 +565,7 @@
             "S": "04/20/2021 00:00:00"
           },
           "createdBy": {
-            "S": "TFE641"
+            "S": "TFE111"
           },
           "tagName": {
             "S": "1234_DID_Enrichment"
@@ -607,12 +588,6 @@
           "currVersion": {
             "S": "v1"
           },
-          "deleteDate": {
-            "S": "NA"
-          },
-          "deletedBy": {
-            "S": "NA"
-          },
           "effectiveDate": {
             "S": "04/21/2021 00:00:00"
           },
@@ -620,22 +595,65 @@
             "L": []
           },
           "sourceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "1234"
+                  },
+                  "address": {
+                    "S": "s3://..."
+                  }
+                }
+              }
+            ]
           },
           "referenceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "2345"
+                  },
+                  "address": {
+                    "S": "postgres://..."
+                  },
+                  "ID": {
+                    "S": "2456"
+                  },
+                  "address": {
+                    "S": "postgres://..."
+                  }
+                }
+              }
+            ]
           },
           "joinCriteria": {
-            "L": []
-          },
-          "datasetName": {
-            "S": "NA"
-          },
-          "datasetID": {
-            "S": "NA"
-          },
-          "destination": {
-            "S": "NA"
+            "L": [{
+                "M": {
+                  "dataset1": {
+                    "S": "source1"
+                  },
+                  "dataset1Type": {
+                    "S": "source"
+                  },
+                  "dataset1EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "dataset2": {
+                    "S": "ref1"
+                  },
+                  "dataset2Type": {
+                    "S": "ref"
+                  },
+                  "dataset2EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "returnField": {
+                    "S": "GL Account"
+                  }
+                }
+              }]
           }
         },
         {
@@ -658,7 +676,7 @@
             "S": "04/20/2021 00:00:00"
           },
           "createdBy": {
-            "S": "TFE641"
+            "S": "TFE111"
           },
           "tagName": {
             "S": "1234_DID_Enrichment"
@@ -678,15 +696,6 @@
           "version": {
             "S": "v1"
           },
-          "currVersion": {
-            "S": "NA"
-          },
-          "deleteDate": {
-            "S": "NA"
-          },
-          "deletedBy": {
-            "S": "NA"
-          },
           "effectiveDate": {
             "S": "04/21/2021 00:00:00"
           },
@@ -694,22 +703,65 @@
             "L": []
           },
           "sourceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "1234"
+                  },
+                  "address": {
+                    "S": "s3://..."
+                  }
+                }
+              }
+            ]
           },
           "referenceDatasetMetadata": {
-            "L": []
+            "L": [
+              {
+                "M": {
+                  "ID": {
+                    "S": "2345"
+                  },
+                  "address": {
+                    "S": "postgres://..."
+                  },
+                  "ID": {
+                    "S": "2456"
+                  },
+                  "address": {
+                    "S": "postgres://..."
+                  }
+                }
+              }
+            ]
           },
           "joinCriteria": {
-            "L": []
-          },
-          "datasetName": {
-            "S": "NA"
-          },
-          "datasetID": {
-            "S": "NA"
-          },
-          "destination": {
-            "S": "NA"
+            "L": [{
+                "M": {
+                  "dataset1": {
+                    "S": "source1"
+                  },
+                  "dataset1Type": {
+                    "S": "source"
+                  },
+                  "dataset1EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "dataset2": {
+                    "S": "ref1"
+                  },
+                  "dataset2Type": {
+                    "S": "ref"
+                  },
+                  "dataset2EnrichmentKey": {
+                    "S": "SECSUBTYPE"
+                  },
+                  "returnField": {
+                    "S": "GL Account"
+                  }
+                }
+              }]
           }
         }
       ],

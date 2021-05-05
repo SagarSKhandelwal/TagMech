@@ -40,11 +40,14 @@ class GetActiveTag(Resource):
 
         for i in range(len(resp['Items'])):
             print("inside for")
-            if resp['Items'][i]['state'] == 'active':
-                getTags = resp['Items'][i]['SK']
-                value['sk'].append(getTags)
-            else:
-                print("data not exist")
+            try:
+                if resp['Items'][i]['state'] == 'active':
+                    getTags = resp['Items'][i]['SK']
+                    value['sk'].append(getTags)
+                else:
+                    print("data not exist")
+            except:
+                print("key does not exist")
         
         return value
 
@@ -69,12 +72,15 @@ class GetTagVersionHistory(Resource):
         )
 
         for i in range(len(resp['Items'])):
-            if resp['Items'][i]['tagName'] == tagName:
-                # getVersion = {"sk":resp['Items'][i]['SK'], "version":resp['Items'][i]['version']}
-                getVersion = {"version":resp['Items'][i]['version']}
-                value['versionHistory'].append(getVersion)
-            else:
-                print("data not exist")
+            try:
+                if resp['Items'][i]['tagName'] == tagName:
+                    # getVersion = {"sk":resp['Items'][i]['SK'], "version":resp['Items'][i]['version']}
+                    getVersion = {"version":resp['Items'][i]['version']}
+                    value['versionHistory'].append(getVersion)
+                else:
+                    print("data not exist")
+            except:
+                print("key does not exist")
 
         return value
 
@@ -100,11 +106,14 @@ class GetTagBySpecificUser(Resource):
         )
 
         for i in range(len(resp['Items'])):
-            if resp['Items'][i]['createdBy'] == createdBy:
-                getTags = resp['Items'][i]['SK']
-                value['tagBySpecificUser'].append(getTags)
-            else:
-                print("data not exist")
+            try:
+                if resp['Items'][i]['createdBy'] == createdBy:
+                    getTags = resp['Items'][i]['SK']
+                    value['tagBySpecificUser'].append(getTags)
+                else:
+                    print("data not exist")
+            except:
+                print("key does not exist")
         
         return value
 
@@ -123,11 +132,14 @@ class GetTagByApprovalStatus(Resource):
         )
 
         for i in range(len(resp['Items'])):
-            if resp['Items'][i]['approvedStatus'] == approvedStatus:
-                getTags = resp['Items'][i]['SK']
-                value['approvedStatus'].append(getTags)
-            else:
-                print("data not exist")
+            try:
+                if resp['Items'][i]['approvedStatus'] == approvedStatus:
+                    getTags = resp['Items'][i]['SK']
+                    value['approvedStatus'].append(getTags)
+                else:
+                    print("data not exist")
+            except:
+                print("key does not exist")
         
         return value
 
