@@ -3,12 +3,26 @@ from flask_restful import Resource, Api, reqparse, abort, marshal, fields, reque
 import boto3
 from boto3.dynamodb.conditions import Key
 import json
-from config import dynamodb, table
 from botocore.exceptions import ClientError
+import configparser
 
 # Initalize flask
 app = Flask(__name__)
 api = Api(app)
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# string = config['dynamodb']['string']
+# endpoint_url = config['dynamodb']['endpoint_url']
+# region_name = config['dynamodb']['region_name']
+# table = config['dynamodb']['table']
+
+# Connection with dynamoDB
+dynamodb = boto3.resource(config['dynamodb']['DATABASE_NAME'], endpoint_url=config['dynamodb']['ENDPOINT_URL'], region_name=config['dynamodb']['REGION_NAME'])
+
+# Table name 
+table = dynamodb.Table(config['dynamodb']['TABLE']) 
 
 # Method calls
 
