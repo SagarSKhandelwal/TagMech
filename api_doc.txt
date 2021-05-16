@@ -1,0 +1,120 @@
+POST /getActiveTag
+Get all active tags for specific partition key.
+
+URL Params: None
+Headers: Content-Type: application/json
+Data Params:
+  {
+    PK: string  # "PK":"COAF#SOURCE#1234"
+  }
+Success Response: (Code: 200)
+Content: { 
+			sk: [
+			    {<SK>},
+			    {<SK>},
+			    {<SK>}
+			]
+		}     	  # {
+				  #	    "sk": [
+				  #	        "#TARGET#1234_enriched#REF#2345#RETURN#BU#v0",
+				  #	        "#TARGET#1234_enriched#REF#2456&2567#RETURN#DID#v0",
+				  #	        "#TARGET#1234_enriched#REF#2456&2567#RETURN#DID#v1"
+				  #	    ]
+				  #	}
+
+POST /getTagVersionHistory
+Get tag version history for specific tagName.
+
+URL Params: None
+Headers: Content-Type: application/json
+Data Params:
+  {
+    PK: string,       # "PK":"COAF#SOURCE#123456",
+    tagName: string   # "tagName": "1234_DID_Enrichment" 
+  }
+Success Response: (Code: 200)
+Content: {
+		    versionHistory: [
+		        {
+		            version: string
+		        },
+		        {
+		            version: string
+		        }
+		    ]
+		}   	  # {
+				  #	    "versionHistory": [
+				  #	        {
+				  #	            "version": "v0"
+				  #	        },
+				  #	        {
+				  #	            "version": "v1"
+				  #        }
+				  #	    ]
+				  #	}
+
+POST /getTagBySpecificUser
+Get all tags for specific user.
+
+URL Params: None
+Headers: Content-Type: application/json
+Data Params:
+  {
+    PK: string,          # "PK":"COAF#SOURCE#1234",
+    createdBy: string    # "createdBy": "TFE641" 
+  }
+Success Response: (Code: 200)
+Content: {
+			"tagBySpecificUser": [
+		        {<SK>},
+			    {<SK>},
+			    {<SK>}
+		    ]
+		 }  # { "tagBySpecificUser": [
+		    #    "#TARGET#1234_enriched#REF#2345#RETURN#BU#v0",
+		    #    "#TARGET#1234_enriched#REF#2345#RETURN#BU#v1",
+		    #    "#TARGET#1234_enriched#REF#2345#RETURN#BU#v2"
+		    #  ]
+		    # }
+
+PUT /addTagDetails
+Add tag details for particular tag.
+
+URL Params: None
+Headers: Content-Type: application/json
+Data Params:
+  {
+    PK: string,
+    SK: string, 
+    version: string,
+    tagName: string,
+    owner: string
+  } # {
+    # 	"PK": "COAF#SOURCE#1236",
+    #	"SK": "#TARGET#1234_enriched#REF#2456&2567#RETURN#DID#v2", 
+    #	"version": "v1",
+    #	"tagName": "1236_DID_Enrichment",
+    #	"owner": "SAGAR"
+	# }
+Success Response: (Code: 200)
+Content: {
+		    "success": "Tag added successfully"
+		 }
+
+POST /deleteTag
+Update state from active to delete for specific tag.
+
+URL Params: None
+Headers: Content-Type: application/json
+Data Params:
+  {
+    PK: string,
+    SK: string
+  } # {
+    # 	"PK": "COAF#SOURCE#1236",
+    #	"SK": "#TARGET#1234_enriched#REF#2456&2567#RETURN#DID#v2" 
+    # }
+Success Response: (Code: 200)
+Content: {
+		    "success": "Tag deleted successfully"
+		 }
